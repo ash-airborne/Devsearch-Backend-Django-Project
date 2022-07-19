@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<p>This is the {{page}} page.</p>
+
+{% if number > 10 %}
+    <p>Number <em>Greater</em> than 10.</p>
+{% elif number < 10 %}
+    <p>Number <em>Smaller</em> than 10.</p>
+{% else %}
+    <p>Number <em>Equal</em> to 10.</p>
+{% endif %}
+
+<h1>Projects</h1>
+<ul>
+    {% for project in projects%}
+        <li>Title: <a href="{% url 'project' project.id %}">{{project.title}}</a> --- {{project.description}}</li>
+    {% endfor%}
+</ul>
+
+
+
+
+
+<h1>This is the Projects Page Template</h1>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu ex condimentum, ultrices arcu elementum, volutpat massa. Aliquam tempor pellentesque neque et pellentesque. Suspendisse auctor dapibus pretium. Sed bibendum justo sed erat volutpat, et pellentesque justo efficitur. Suspendisse accumsan neque sed rutrum consequat. Integer molestie eget arcu vitae finibus. Nam ultrices magna id odio lobortis, quis aliquam lectus iaculis. Fusce eu tristique nulla, luctus bibendum tortor. Vivamus finibus ullamcorper elementum. Nullam viverra ligula id dapibus convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus id ligula non purus condimentum imperdiet. Morbi tempor lacus sit amet nibh porttitor sollicitudin. Curabitur et facilisis nisl. Nam fermentum dolor felis, a fringilla urna efficitur nec. Donec at iaculis leo, at ornare ante.
+
+Vivamus viverra viverra lacinia. Duis a imperdiet massa, at rhoncus diam. Sed in felis in erat lacinia finibus. Aliquam erat volutpat. In iaculis nulla sed maximus pulvinar. Morbi interdum ut orci sed auctor. Praesent ultrices ex in erat tincidunt, ut aliquet nibh aliquet. Aliquam erat volutpat. Curabitur vehicula faucibus enim, quis tincidunt lacus ornare nec. Pellentesque sodales commodo lorem euismod luctus. Duis vel luctus urna, quis pellentesque ante. Maecenas vel blandit nisl. Aliquam scelerisque magna rhoncus dui lacinia sodales. Aliquam tincidunt sollicitudin sem, nec fermentum leo pellentesque ultricies. Sed rutrum dapibus turpis in venenatis. Aliquam vel massa sem. </p>
+{% endblock content %}
